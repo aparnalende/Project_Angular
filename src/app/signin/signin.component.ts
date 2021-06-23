@@ -35,6 +35,8 @@ export class SigninComponent implements OnInit {
 
           if (this.signinUser.password === this.user?.password) {
             Swal.fire('success', '', 'success');
+            this.servObj.setUserSession(this.user);
+
             this.route.navigate(['dashboard']);
           } else {
             Swal.fire('Enter valid credential', '', 'error');
