@@ -9,9 +9,13 @@ import { AngularMaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent, HomeComponent, NavbarComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +23,7 @@ import { SignupComponent } from './signup/signup.component';
     AngularMaterialModule,
     FormsModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],

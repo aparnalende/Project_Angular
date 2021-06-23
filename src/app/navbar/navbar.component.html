@@ -1,0 +1,70 @@
+<mat-toolbar color="primary">
+  <button
+    routerLink="home"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>work</mat-icon>
+  </button>
+  <span>Project</span>
+  <span class="example-spacer"></span>
+
+  <div *ngIf="!userSer.isUserLogin()">
+    <button
+      routerLink="signin"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>login </mat-icon>
+    </button>
+    <span>login</span>
+  </div>
+
+  <div *ngIf="!userSer.isUserLogin()">
+    <button
+      routerLink="signup"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>subscriptions </mat-icon>
+    </button>
+    <span>SignUp</span>
+  </div>
+
+  <div *ngIf="userSer.isUserLogin()">
+    <button
+      (click)="onLogout()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+    <span>logout</span>
+  </div>
+
+  <div class="mx-6" *ngIf="userSer.isUserLogin()">
+    <button
+      routerLink="dashboard"
+      (click)="onDashBord()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>person</mat-icon>
+    </button>
+    <span>{{ userData.username }}</span>
+  </div>
+</mat-toolbar>
+
+<!-- <mat-toolbar color="primary">
+      <span><a mat-icon-button routerLink="">Project</a></span>
+      <span class="example-spacer"></span>
+      <a *ngIf="!loggedIn" mat-icon-button routerLink="/signin">SignIn</a>
+      <a mat-icon-button *ngIf="loggedIn">User</a>
+      <a *ngIf="loggedIn" mat-icon-button routerLink="/signup">SignUp</a>
+      <a *ngIf="loggedIn" (click)="onLogout()" mat-icon-button>Logout</a>
+    </mat-toolbar> -->
